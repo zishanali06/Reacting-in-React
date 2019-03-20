@@ -9,14 +9,30 @@ class MovieList extends React.Component {
         }
     }
 
-    componentDidMount() {
-        fetch("https://ghibliapi.herokuapp.com/films")
-            .then(result => result.json())
-            .then(movieArray => {
-                this.setState({ movieArray })
-            })
-            .catch(e => console.log(e))
+    //THIS IS USING THE .THEN PROMISE CHAINING
+    // componentDidMount() {
+    //     fetch("https://ghibliapi.herokuapp.com/films")
+    //         .then(result => result.json())
+    //         .then(movieArray => {
+    //             this.setState({ movieArray })
+    //         })
+    //         .catch(e => console.log(e))
+    // }
+
+    //THIS IS USING ES6 TRY AND CATCH
+    async componentDidMount() {
+        try{
+            let apiresultinjson = await fetch('https://ghibliapi.herokuapp.com/films');
+            let convertjsontoarray = await apiresultinjson.json();
+            this.setState({ movieArray: convertjsontoarray });
+        } catch (e) {
+            console.log(e);
+        }
+        
+
     }
+
+
     render() {
         return (
             <div className="row moviegrid">

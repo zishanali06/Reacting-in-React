@@ -22,7 +22,7 @@ class App extends React.Component {
                         </div>
                         <Switch>
                             <Route exact path="/movies" component={MovieList} />
-                            {/* <Route exact path="/" component={App} /> */}
+                            
                         </Switch>
                     </React.Fragment>
                 </Router>
