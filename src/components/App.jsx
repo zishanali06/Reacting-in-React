@@ -3,6 +3,7 @@ import MovieList from './MovieList';
 import PeopleList from './PeopleList';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import MovieDetails from './MovieDetails';
+import PersonDetails from './PersonDetails';
 
 class App extends React.Component {
     constructor(props) {
@@ -25,7 +26,8 @@ class App extends React.Component {
                         <Switch>
                             <Route exact path="/movies" component={MovieList} />
                             <Route exact path="/people" component={PeopleList} />
-                            <Route exact path="/desc/:movieid" component={MovieDetails} />
+                            <Route exact path="/movies/:movieid" component={MovieDetails} />
+                            <Route exact path="/people/:personid" component={PersonDetails} />
                         </Switch>
                     </React.Fragment>
                 </Router>

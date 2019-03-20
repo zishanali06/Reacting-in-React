@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 const PersonCard = (props) => {
     return (
@@ -7,9 +8,7 @@ const PersonCard = (props) => {
                 <div className="card-body">
                     <h5 className="card-title">{props.person.name}</h5>
                     <h6 className="card-subtitle mb-2 text-muted">Gender: {props.person.gender}</h6>
-                    <h6 className="card-subtitle mb-2 text-muted">Age: {props.person.age}</h6>
-                    <h6 className="card-subtitle mb-2 text-muted">Eye Color: {props.person.eye_color}</h6>
-                    <a href={props.person.url} className="card-link">See Unique Endpoint for Movie</a>
+                    <Link to={`/people/${props.person.id}`} className="card-link">Click to See Details</Link>
                 </div>
             </div>
         </div>

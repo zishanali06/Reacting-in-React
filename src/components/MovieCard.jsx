@@ -11,7 +11,7 @@ const MovieCard = (props) => {
                         <h6 className="card-subtitle mb-2 text-muted">Producer: {props.movie.producer}</h6>
                         <h6 className="card-subtitle mb-2 text-muted">Director: {props.movie.director}</h6>
                         <p className="card-text">{props.movie.description}</p>
-                        <Link to={`/desc/${props.movie.id}`} className="card-link">See Unique Endpoint for Movie</Link>
+                        <Link to={`/movies/${props.movie.id}`} className="card-link">Click to See Details</Link>
                     </div>
                 </div>
             </div>
