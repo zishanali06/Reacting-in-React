@@ -1,6 +1,8 @@
 import React from 'react';
 import MovieList from './MovieList';
+import PeopleList from './PeopleList';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import MovieDetails from './MovieDetails';
 
 class App extends React.Component {
     constructor(props) {
@@ -17,12 +19,13 @@ class App extends React.Component {
                     <React.Fragment>
                         <div className="row">
                             <Link className="mx-auto btn btn-primary" to="/movies">See Movies</Link>
-                            <Link className="mx-auto btn btn-primary" to="/">Go Home</Link>
+                            <Link className="mx-auto btn btn-primary" to="">Go Home</Link>
                             <Link className="mx-auto btn btn-primary" to="/people">See People</Link>
                         </div>
                         <Switch>
                             <Route exact path="/movies" component={MovieList} />
-                            
+                            <Route exact path="/people" component={PeopleList} />
+                            <Route exact path="/desc/:movieid" component={MovieDetails} />
                         </Switch>
                     </React.Fragment>
                 </Router>
