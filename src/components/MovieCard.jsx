@@ -1,6 +1,6 @@
 import React from 'react';
 
-class MovieCard extends Component {
+class MovieCard extends React.Component {
     constructor(props) {
         super(props);
         this.state = { 
@@ -14,8 +14,10 @@ class MovieCard extends Component {
         }
     }
     render() { 
-        return (  );
+        return (
+            <h1>TESTING 123</h1>
+        );
     }
 }
- 
+
 export default MovieCard;

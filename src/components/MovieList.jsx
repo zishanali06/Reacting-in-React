@@ -1,4 +1,5 @@
 import React from 'react';
+import MovieCard from './MovieCard';
 
 class MovieList extends React.Component {
     constructor(props) {
@@ -20,7 +21,7 @@ class MovieList extends React.Component {
         return (
             <div className="row moviegrid">
                 <h3 className="col-12 text-center mt-3">MOVIES THAT HAVE NEVER BEEN WATCHED:</h3>
-                
+                {this.state.movieArray.map((movie) => (<MovieCard movie={movie} key={movie.id} />))}
             </div>
         );
     }
